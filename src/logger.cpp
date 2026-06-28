@@ -1,0 +1,34 @@
+#include <elu/logger.hpp>
+
+#include <iostream>
+
+namespace elu
+{
+
+void Logger::info(const std::string& message)
+{
+    log("INFO", message);
+}
+
+void Logger::warning(const std::string& message)
+{
+    log("WARNING", message);
+}
+
+void Logger::error(const std::string& message)
+{
+    log("ERROR", message);
+}
+
+void Logger::log(const std::string& level,
+                 const std::string& message)
+{
+    std::cout
+        << "["
+        << level
+        << "] "
+        << message
+        << std::endl;
+}
+
+}
